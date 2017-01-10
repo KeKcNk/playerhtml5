@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: dimiki
+  password: 123456
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+ 
+development:
+  <<: *default
+  database: dimiki_test
+ 
+test:
+  <<: *default
+  database: dimiki_popo
+ 
+production:
+  <<: *default
+  database: dimiki_mimi
